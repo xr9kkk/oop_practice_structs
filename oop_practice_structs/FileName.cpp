@@ -18,7 +18,7 @@ int main()
 	for (Character* c : l) {
 		dc->draw_character(c);
 	}
-	while (true)
+	for (int i{}; i<10; ++i)
 	{
 		std::vector<Character*> copies;
 		for (int i{ 0 }; i < l.size(); ++i)
@@ -27,12 +27,12 @@ int main()
 			{
 				Character* ccopy = l[i]->spawn_copy();
 				copies.push_back(ccopy);
-				std::cout << l[i]->get_name() << "Creates copy" << ccopy->get_name() << std::endl;
+				std::cout << l[i]->get_name() << " Creates copy " << ccopy->get_name() << std::endl;
 			}
 			else if (rand() % 100 < 50)
 			{
 				Character* target = l[i]->attack(l);
-				std::cout << l[i]->get_name() << "attacks" << target->get_name() << std::endl;
+				std::cout << l[i]->get_name() << " attacks " << target->get_name() << std::endl;
 			}
 		}
 		for (int i{ 0 }; i < l.size(); ++i)
